@@ -2,9 +2,10 @@
 <div *ngIf = "course">
   <h3>{{course.name}}</h3>
   <p>Description: {{course.description}}</p>
+ <div *ngFor = "let author of authors, index as authorId">
   <a [title]="'Details of '+ course.author" 
   [routerLink]="['/authors',authorId]">Author: {{course.author}}</a>
-
+</div>
   <link
     rel="stylesheet"
     href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
