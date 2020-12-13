@@ -1,0 +1,6 @@
+<h2>Courses</h2>
+<div *ngFor = "let course of Courses">
+<h3>
+  <a [title] = "'Details of ' + course
+  .name">{{course.name}}</a>
+</h3>
