@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Courses } from '../courses';
+import { courses } from '../courses';
+
 
 @Component({
   selector: 'app-course-list',
@@ -7,6 +8,5 @@ import { Courses } from '../courses';
   styleUrls: ['./course-list.component.css']
 })
 export class CourseListComponent {
-  courses = Courses;
-  
+  courses = courses;
 }

@@ -1,12 +1,10 @@
-<h2>Courses</h2>
-<div *ngFor="let course of courses;index as courseId">
-  <h3>
-    <a
-      [title]="'Details of the course on ' + course.name"
-      [routerLink]="['/courses',courseId]">{{course.name}}</a>
-  </h3>
+<h2>Course Details</h2>
+<div *ngIf = "course">
+  <h3>{{course.name}}</h3>
   <p>Description: {{course.description}}</p>
-  <p>Author: {{course.author}}</p>
+  <a [title]="'Details of '+ course.author" 
+  [routerLink]="['/authors',authorId]">Author: {{course.author}}</a>
+
   <link
     rel="stylesheet"
     href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
@@ -26,5 +24,8 @@
   </p>
 
   <p>Duration: {{course.duration}}</p>
-  <p> Price: {{course.price | currency}}
+
+  <h3><button (click)="addToCart(course)">Enroll Now </button></h3>
+  <h3>
+  <button (click)="addToWishlist(course)">Wishlist</button></h3>
 </div>
